@@ -3502,9 +3502,9 @@
     "restore": {
       "projectUniqueName": "MovieSearch",
       "projectName": "MovieSearch",
-      "projectPath": "C:\\Users\\Prabh\\Documents\\UiPath\\MovieSearch2\\.local",
+      "projectPath": "C:\\Users\\Prabh\\Documents\\UiPath\\MovieSearch\\.local",
       "packagesPath": "C:\\Users\\Prabh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Prabh\\Documents\\UiPath\\MovieSearch2\\.local"
+      "outputPath": "C:\\Users\\Prabh\\Documents\\UiPath\\MovieSearch\\.local"
     },
     "frameworks": {
       "net461": {
