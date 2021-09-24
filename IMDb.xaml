@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1262,3368</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1262,3503</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Sequence_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -79,6 +79,7 @@
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.Entity</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -87,7 +88,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="955,3303" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="995,3438" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:Browser" Name="imdb" />
     </Sequence.Variables>
@@ -96,112 +97,89 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" sap2010:Annotation.AnnotationText="" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="913,3211" sap2010:WorkflowViewState.IdRef="OpenBrowser_4" UiBrowser="[imdb]" Url="https://www.imdb.com/">
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" sap2010:Annotation.AnnotationText="" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="953,3346" sap2010:WorkflowViewState.IdRef="OpenBrowser_4" UiBrowser="[imdb]" Url="https://www.imdb.com/">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence sap:VirtualizedContainerService.HintSize="879,3079" sap2010:WorkflowViewState.IdRef="Sequence_66">
+          <Sequence sap:VirtualizedContainerService.HintSize="919,3214" sap2010:WorkflowViewState.IdRef="Sequence_66">
             <Sequence.Variables>
-              <Variable x:TypeArguments="sd:DataTable" Name="producers">
-                <Variable.Default>
-                  <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="New System.Data.DataTable" />
-                </Variable.Default>
-              </Variable>
+              <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="producers" />
               <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="directors" />
+              <Variable x:TypeArguments="x:String" Name="url" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="837,2987" sap2010:WorkflowViewState.IdRef="Sequence_57">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="877,3122" sap2010:WorkflowViewState.IdRef="Sequence_57">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[Movies]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="795,2833" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[Movies]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="835,2968" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="745,2686" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="785,2821" sap2010:WorkflowViewState.IdRef="Sequence_56">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="703,2594" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                      <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="743,2729" sap2010:WorkflowViewState.IdRef="Sequence_55">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[imdb]" BrowserType="Chrome" DisplayName="Attach Browser 'IMDbRatin Page'" sap:VirtualizedContainerService.HintSize="661,810" sap2010:WorkflowViewState.IdRef="BrowserScope_10" InformativeScreenshot="97e0432320bf94e876eb4cbab61adfc2">
+                        <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[imdb]" BrowserType="Chrome" DisplayName="Attach Browser 'IMDbRatin Page'" sap:VirtualizedContainerService.HintSize="701,670" sap2010:WorkflowViewState.IdRef="BrowserScope_10" InformativeScreenshot="97e0432320bf94e876eb4cbab61adfc2">
                           <ui:BrowserScope.Body>
                             <ActivityAction x:TypeArguments="x:Object">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,664" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,524" sap2010:WorkflowViewState.IdRef="Sequence_50">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  suggestion-search'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[row(0).ToString]">
-                                  <ui:TypeInto.Target>
-                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4d2e6ddc-07f4-48f2-beda-403c3cceaeb0" InformativeScreenshot="2304eb74b4bdeeaaca9d6cee80b6dd8f" Selector="&lt;html app='chrome.exe' title='*MD*' /&gt;&lt;webctrl tag='INPUT' type='text' /&gt;" WaitForReady="COMPLETE">
+                                <ui:NavigateTo Browser="[imdb]" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="NavigateTo_2" Url="[&quot;https://www.imdb.com/find?q=&quot;+row(0).ToString.Replace(&quot; &quot;, &quot;+&quot;)+&quot;&amp;ref_=nv_sr_sm&quot;]" />
+                                <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="href" DisplayName="Get Attribute 'A  /title/tt6264654/?re...'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="GetAttribute_1">
+                                  <ui:GetAttribute.Result>
+                                    <OutArgument x:TypeArguments="x:String">[url]</OutArgument>
+                                  </ui:GetAttribute.Result>
+                                  <ui:GetAttribute.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1a8898e7-891a-48a0-bcd0-4d31ec351dda" InformativeScreenshot="3db68b105900cccb01a7447986f9ef92" Selector="&lt;html app='chrome.exe' title='Find - IMDb' /&gt;&#xA;&lt;webctrl parentid='main' tableRow='1' tag='A' /&gt;&#xA;">
                                       <ui:Target.TimeoutMS>
                                         <InArgument x:TypeArguments="x:Int32" />
                                       </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
                                     </ui:Target>
-                                  </ui:TypeInto.Target>
-                                </ui:TypeInto>
-                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  suggestion-sear...'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_17" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
-                                  <ui:Click.CursorPosition>
-                                    <ui:CursorPosition OffsetX="8" OffsetY="16" Position="TopLeft" />
-                                  </ui:Click.CursorPosition>
-                                  <ui:Click.Target>
-                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="038d8ef7-2dae-456b-841c-1584936c474b" InformativeScreenshot="a523030514c73a1d1720a04e23ba68cc" Selector="&lt;html app='chrome.exe' title='*MD*' /&gt;&lt;webctrl tag='BUTTON' type='submit' /&gt;" WaitForReady="COMPLETE">
-                                      <ui:Target.TimeoutMS>
-                                        <InArgument x:TypeArguments="x:Int32" />
-                                      </ui:Target.TimeoutMS>
-                                    </ui:Target>
-                                  </ui:Click.Target>
-                                </ui:Click>
-                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  /title/tt6264654/?re...'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_15" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
-                                  <ui:Click.CursorPosition>
-                                    <ui:CursorPosition OffsetX="19" OffsetY="7" Position="TopLeft" />
-                                  </ui:Click.CursorPosition>
-                                  <ui:Click.Target>
-                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="12570d7c-3042-4de1-b5b4-6150e5eeca14" InformativeScreenshot="e8e9b4a97258354624df628dc8890526" Selector="&lt;html app='chrome.exe' title='* IMDb' /&gt;&lt;webctrl omit:aaname='Free Guy' parentid='main' tableRow='1' tag='A' /&gt;" WaitForReady="COMPLETE">
-                                      <ui:Target.TimeoutMS>
-                                        <InArgument x:TypeArguments="x:Int32" />
-                                      </ui:Target.TimeoutMS>
-                                    </ui:Target>
-                                  </ui:Click.Target>
-                                </ui:Click>
-                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  fullcredits/?ref_=tt...'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_16" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
-                                  <ui:Click.CursorPosition>
-                                    <ui:CursorPosition OffsetX="31" OffsetY="9" Position="TopLeft" />
-                                  </ui:Click.CursorPosition>
-                                  <ui:Click.Target>
-                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="56c1d33a-7d37-4c18-98ba-845d573bcf72" InformativeScreenshot="84b021d64d51c8bad24644de80a1d73b" Selector="&lt;html app='chrome.exe' title='* IMDb' /&gt;&lt;webctrl aaname='Cast &amp;amp; crew' parentid='__next' tag='A' /&gt;" WaitForReady="COMPLETE">
-                                      <ui:Target.TimeoutMS>
-                                        <InArgument x:TypeArguments="x:Int32" />
-                                      </ui:Target.TimeoutMS>
-                                    </ui:Target>
-                                  </ui:Click.Target>
-                                </ui:Click>
+                                  </ui:GetAttribute.Target>
+                                </ui:GetAttribute>
+                                <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[url]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">["https://www.imdb.com/" + Split(url, "?")(0) + "fullcredits/?ref_=tt_ql_cl"]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[url]" />
                               </Sequence>
                             </ActivityAction>
                           </ui:BrowserScope.Body>
                         </ui:BrowserScope>
-                        <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="661,582" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                        <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="701,582" sap2010:WorkflowViewState.IdRef="Sequence_52">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -228,7 +206,7 @@
                                       </ui:Target>
                                     </ui:ExtractData.Target>
                                   </ui:ExtractData>
-                                  <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[directors]" DisplayName="Extract Structured Data 'TABLE'" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ExtractData_7" MaxNumberOfResults="100" SimulateClick="True">
+                                  <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[producers]" DisplayName="Extract Structured Data 'TABLE'" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ExtractData_7" MaxNumberOfResults="100" SimulateClick="True">
                                     <ui:ExtractData.Target>
                                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="738b6f08-05b0-4598-bf03-052cb9c2c424" InformativeScreenshot="0c9fb9216ba9a043e4310bfcad941c96" Selector="&lt;html app='chrome.exe' title='* IMDb' /&gt;&lt;webctrl idx='4' tag='TABLE' /&gt;" WaitForReady="COMPLETE">
                                         <ui:Target.TimeoutMS>
@@ -242,7 +220,7 @@
                             </ui:BrowserScope.Body>
                           </ui:BrowserScope>
                         </Sequence>
-                        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[directors]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="661,446" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[directors]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="701,446" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                           <ui:ForEachRow.Body>
                             <ActivityAction x:TypeArguments="sd:DataRow">
                               <ActivityAction.Argument>
@@ -280,19 +258,19 @@
                             </ActivityAction>
                           </ui:ForEachRow.Body>
                         </ui:ForEachRow>
-                        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[directors]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="661,420" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+                        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[producers]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="701,695" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
                           <ui:ForEachRow.Body>
                             <ActivityAction x:TypeArguments="sd:DataRow">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="producer" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="539,273" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="651,548" sap2010:WorkflowViewState.IdRef="Sequence_54">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[Split(producer(2).ToString, &quot; &quot;)(0)]" sap:VirtualizedContainerService.HintSize="497,181" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                                <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[Split(producer(2).ToString, &quot; &quot;)(0)]" sap:VirtualizedContainerService.HintSize="609,456" sap2010:WorkflowViewState.IdRef="Switch`1_1">
                                   <Switch.Default>
                                     <If Condition="[String.IsNullOrEmpty(row(&quot;Other Producers&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="569,207" sap2010:WorkflowViewState.IdRef="If_5">
                                       <sap:WorkflowViewStateService.ViewState>
@@ -407,19 +385,47 @@
                                       </Assign>
                                     </If.Else>
                                   </If>
+                                  <If x:Key="" Condition="[String.IsNullOrEmpty(row(&quot;Producers&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="569,207" sap2010:WorkflowViewState.IdRef="If_6">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <If.Then>
+                                      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Object">[row("Producers")]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Object">[producer(0)]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </If.Then>
+                                    <If.Else>
+                                      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Object">[row("Producers")]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Object">[String.Concat(row("Producers")," / ", producer(0))]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </If.Else>
+                                  </If>
                                 </Switch>
                               </Sequence>
                             </ActivityAction>
                           </ui:ForEachRow.Body>
                         </ui:ForEachRow>
-                        <ui:ClearDataTable DataTable="[directors]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="661,22" sap2010:WorkflowViewState.IdRef="ClearDataTable_1" />
-                        <ui:ClearDataTable DataTable="[directors]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="661,22" sap2010:WorkflowViewState.IdRef="ClearDataTable_2" />
+                        <ui:ClearDataTable DataTable="[directors]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="701,22" sap2010:WorkflowViewState.IdRef="ClearDataTable_1" />
+                        <ui:ClearDataTable DataTable="[producers]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="701,22" sap2010:WorkflowViewState.IdRef="ClearDataTable_2" />
                       </Sequence>
                     </Sequence>
                   </ActivityAction>
                 </ui:ForEachRow.Body>
               </ui:ForEachRow>
-              <ui:CloseTab Browser="[imdb]" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="795,22" sap2010:WorkflowViewState.IdRef="CloseTab_10" />
+              <ui:CloseTab Browser="[imdb]" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="835,22" sap2010:WorkflowViewState.IdRef="CloseTab_10" />
             </Sequence>
           </Sequence>
         </ActivityAction>

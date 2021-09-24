@@ -117,7 +117,7 @@
                         </ui:GetFullText>
                         <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
                           <ui:GetValue.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="763ddf2c-4a38-4494-ac93-be9186b7f880" InformativeScreenshot="5bbe3be9dc5f72bb3a99fccf19bbba7d" Selector="&lt;html app='chrome.exe' title='* - Box Office Mojo' /&gt;&lt;webctrl parentid='a-page' tag='A' class='a-link-normal' idx='7' /&gt;&lt;nav up='2' /&gt;&lt;webctrl parentid='a-page' tag='A' class='a-link-normal' idx='2' /&gt;" TimeoutMS="2000">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="763ddf2c-4a38-4494-ac93-be9186b7f880" InformativeScreenshot="5bbe3be9dc5f72bb3a99fccf19bbba7d" Selector="&lt;html app='chrome.exe' title='* - Box Office Mojo' /&gt;&lt;webctrl parentid='a-page' tag='A' class='a-link-normal' parentclass='a-size-medium a-text-bold' /&gt;" TimeoutMS="2000">
                               <ui:Target.WaitForReady>
                                 <InArgument x:TypeArguments="ui:WaitForReady" />
                               </ui:Target.WaitForReady>
