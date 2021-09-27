@@ -2,8 +2,8 @@
   1. 
 
 # Prior Requirements
-- Hardware: access via computer, mobile device
-- Software: UiPath Web Automation Extension, UiPath Software License, Microsoft Excel Spreadsheet Software
-- Website: Access via URL (LINK TO THE WEBSITE HERE)
+- **Hardware:** access via computer (uses Microsoft Windows Software)
+- **Software:** UiPath Web Automation Extension, UiPath Software License, Microsoft Excel Spreadsheet Software, Chrome Extension, Microsoft Windows
+- **Website:** Access via URL (LINK TO THE WEBSITE HERE)
 
 # Documentation 
