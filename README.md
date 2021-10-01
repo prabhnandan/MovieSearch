@@ -1,5 +1,7 @@
 # User Manual for MovieSearch (Instructions)
-  1. 
+  1. Download Movie Search zip file
+  2. Open UiPath Studio and click 'Open a Local Project'
+  3. 
 
 # Prior Requirements
 - **Hardware:** access via computer (uses Microsoft Windows Software)
