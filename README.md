@@ -1,7 +1,8 @@
 # User Manual for MovieSearch (Instructions)
   1. Download Movie Search zip file
   2. Open UiPath Studio and click 'Open a Local Project'
-  3. 
+  3. Select 'project.json' json file
+  4. When it directs to the main page of UiPath, click 'Project' under the project tab
 
 # Prior Requirements
 - **Hardware:** access via computer (uses Microsoft Windows Software)
