@@ -5,7 +5,7 @@
   4. Click 'Project' under the project tab on the main page
   5. Select the 'MainSeq.xaml' file and run the software
   6. As it executes, it will prompt the user to select the desired month
-      Displays 'Please select the month' with list of months in a drop-down menu
+      - Displays 'Please select the month' with list of months in a drop-down menu
 
 # Prior Requirements
 - **Hardware:** access via computer (uses Microsoft Windows Software)
