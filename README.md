@@ -1,7 +1,7 @@
 # User Manual for MovieSearch (Instructions)
   1. Download Movie Search zip file
   2. Open UiPath Studio and click 'Open a Local Project'
-  3. Select 'project.json' json file
+  3. Select 'project.json' file
   4. Click 'Project' under the project tab on the main page
   5. Select the 'MainSeq.xaml' file and run the software
   6. As it executes, it will prompt the user to select the desired month
