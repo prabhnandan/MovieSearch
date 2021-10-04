@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1262,1378</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1262,1863</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>imdb_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -58,52 +58,61 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Data.Entity</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="imdb" sap:VirtualizedContainerService.HintSize="652,1313" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="imdb" sap:VirtualizedContainerService.HintSize="815,1798" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="610,1221" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence sap:VirtualizedContainerService.HintSize="773,1706" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[Movies]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="568,1067" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[Movies]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="731,1552" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="518,919" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="681,1404" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:NavigateTo Browser="[boxofficemojo]" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="476,59" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[&quot;https://www.boxofficemojo.com&quot; + row(&quot;URL&quot;).ToString]" />
-              <Sequence DisplayName="Screen Scraping" sap:VirtualizedContainerService.HintSize="476,728" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <ui:NavigateTo Browser="[boxofficemojo]" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="639,59" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[&quot;https://www.boxofficemojo.com&quot; + row(&quot;URL&quot;).ToString]" />
+              <Sequence DisplayName="Screen Scraping" sap:VirtualizedContainerService.HintSize="639,1213" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[boxofficemojo]" BrowserType="Chrome" DisplayName="Attach Browser 'FreeGuy B Page'" sap:VirtualizedContainerService.HintSize="434,636" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="b41c2e9ae4eff8d130295596e88806a8">
+                <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[boxofficemojo]" BrowserType="Chrome" DisplayName="Attach Browser 'FreeGuy B Page'" sap:VirtualizedContainerService.HintSize="597,1121" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="b41c2e9ae4eff8d130295596e88806a8">
                   <ui:BrowserScope.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,490" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="563,975" sap2010:WorkflowViewState.IdRef="Sequence_2">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:GetFullText DisplayName="Get Full Text 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_1" IgnoreHidden="False">
+                        <ui:GetFullText DisplayName="Get Full Text 'SPAN'" sap:VirtualizedContainerService.HintSize="521,106" sap2010:WorkflowViewState.IdRef="GetFullText_1" IgnoreHidden="False">
                           <ui:GetFullText.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="727216f9-580c-4b69-bd30-18e312c0cf72" InformativeScreenshot="3146ec3a4b069bd6c06bed89ae0428ea" Selector="&lt;html app='chrome.exe' title='* - Box Office Mojo' /&gt;&lt;webctrl parentid='a-page' tag='SPAN' parentclass='a-size-medium a-text-bold' /&gt;" WaitForReady="COMPLETE">
                               <ui:Target.TimeoutMS>
@@ -115,7 +124,7 @@
                             <OutArgument x:TypeArguments="x:Object">[row("Domestic")]</OutArgument>
                           </ui:GetFullText.Text>
                         </ui:GetFullText>
-                        <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                        <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="521,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
                           <ui:GetValue.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="763ddf2c-4a38-4494-ac93-be9186b7f880" InformativeScreenshot="5bbe3be9dc5f72bb3a99fccf19bbba7d" Selector="&lt;html app='chrome.exe' title='* - Box Office Mojo' /&gt;&lt;webctrl parentid='a-page' tag='A' class='a-link-normal' parentclass='a-size-medium a-text-bold' /&gt;" TimeoutMS="2000">
                               <ui:Target.WaitForReady>
@@ -127,7 +136,7 @@
                             <OutArgument x:TypeArguments="x:Object">[row("International")]</OutArgument>
                           </ui:GetValue.Value>
                         </ui:GetValue>
-                        <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_2">
+                        <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="521,106" sap2010:WorkflowViewState.IdRef="GetValue_2">
                           <ui:GetValue.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f9f32729-a82c-482a-9733-fc1ce370acef" InformativeScreenshot="df24db40c439bc213995aca2bb55b24d" Selector="&lt;html app='chrome.exe' title='* - Box Office Mojo' /&gt;&lt;webctrl aaname='Worldwide' css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;a' parentid='a-page' tag='A' /&gt;&lt;nav up='2' /&gt;&lt;webctrl parentid='a-page' tag='A' class='a-link-normal' parentclass='a-size-medium a-text-bold' /&gt;">
                               <ui:Target.TimeoutMS>
@@ -142,6 +151,40 @@
                             <OutArgument x:TypeArguments="x:Object">[row("Worldwide")]</OutArgument>
                           </ui:GetValue.Value>
                         </ui:GetValue>
+                        <If Condition="[String.IsNullOrEmpty(row(&quot;Distributor&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="521,445" sap2010:WorkflowViewState.IdRef="If_1">
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,298" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_3">
+                                <ui:GetValue.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f9f32729-a82c-482a-9733-fc1ce370acef" InformativeScreenshot="5819090bf4f0ff156b87dee1d4526b52" Selector="&lt;html app='chrome.exe' title='* - Box Office Mojo' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' parentid='a-page' tag='SPAN' idx='2' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:GetValue.Target>
+                                <ui:GetValue.Value>
+                                  <OutArgument x:TypeArguments="x:Object">[row("Distributor")]</OutArgument>
+                                </ui:GetValue.Value>
+                              </ui:GetValue>
+                              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Object">[row("Distributor")]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">[row("Distributor").ToString.Replace("See full company information","")]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </If.Then>
+                        </If>
                       </Sequence>
                     </ActivityAction>
                   </ui:BrowserScope.Body>
@@ -151,7 +194,7 @@
           </ActivityAction>
         </ui:ForEachRow.Body>
       </ui:ForEachRow>
-      <ui:CloseTab Browser="[boxofficemojo]" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="568,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
+      <ui:CloseTab Browser="[boxofficemojo]" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="731,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
     </Sequence>
   </Sequence>
 </Activity>
