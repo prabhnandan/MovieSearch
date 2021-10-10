@@ -5,7 +5,7 @@
   - IMDb: https://www.imdb.com/
   - Box Office Mojo: https://www.boxofficemojo.com/
 - Make sure that the Chrome Extension is enabled
-  - Open UiPath software on computer -> Go to ‘Tools’ page -> Under UiPath Extensions, select Chrome -> A dialog box confirming the extension will be displayed (Now the extension is installed)  -> If not already, close all Chrome browsers -> Go to Chrome page -> In the Google Chrome confirmation pop-up, click ‘Enable Extension’ (Now the extension is enabled)
+  - Open UiPath software on computer → Go to ‘Tools’ page → Under UiPath Extensions, select Chrome → A dialog box confirming the extension will be displayed (Now the extension is installed)  → If not already, close all Chrome browsers → Go to Chrome page → In the Google Chrome confirmation pop-up, click ‘Enable Extension’ (Now the extension is enabled)
 - Ensure that 'Trust access to the VBA project object model' is checked on Excel
   - Open a new Excel workbook →  File →  Options →  Trust Center →  Macro Settings →  Under Developer Macro Settings, check 'Trust access to the VBA project object model'
 
