@@ -25,7 +25,7 @@
 
 
 # Limitations
-- The bot might not execute if the two websites, boxofficemojo and IMDb, are down on the server. If this is the case, try running the bot again after a few minutes.
+- The bot might not execute if two websites', boxofficemojo and IMDb, servers are down. If this is the case, try running the bot again after a few minutes.
 - Comes under exceptional handling:	
     - There are some cases the bot will pick up on multiple movies directed by one director that were released in the same month. - consequently we decided to include them all but order them by their ranking order (Highest gross first).
     - The movies which have the same title can confuse the bot as it will include the same details of the production team and distributor - Users may need to manually search for the movie titles that do release in the same month with the same title, and manipulate the data to have the correct corresponding details across the films.
