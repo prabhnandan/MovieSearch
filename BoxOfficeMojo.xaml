@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1262,1863</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1859,2132</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>imdb_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -67,46 +67,48 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="imdb" sap:VirtualizedContainerService.HintSize="815,1798" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="imdb" sap:VirtualizedContainerService.HintSize="815,2067" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="773,1706" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence sap:VirtualizedContainerService.HintSize="773,1975" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[Movies]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="731,1552" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="731,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Extracting movie info from BoxOfficeMojo&quot;]" />
+      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[Movies]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="731,1555" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="681,1404" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="681,1406" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:NavigateTo Browser="[boxofficemojo]" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="639,59" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[&quot;https://www.boxofficemojo.com&quot; + row(&quot;URL&quot;).ToString]" />
-              <Sequence DisplayName="Screen Scraping" sap:VirtualizedContainerService.HintSize="639,1213" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence DisplayName="Screen Scraping" sap:VirtualizedContainerService.HintSize="639,1215" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[boxofficemojo]" BrowserType="Chrome" DisplayName="Attach Browser 'FreeGuy B Page'" sap:VirtualizedContainerService.HintSize="597,1121" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="b41c2e9ae4eff8d130295596e88806a8">
+                <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[boxofficemojo]" BrowserType="Chrome" DisplayName="Attach Browser 'FreeGuy B Page'" sap:VirtualizedContainerService.HintSize="597,1123" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="b41c2e9ae4eff8d130295596e88806a8">
                   <ui:BrowserScope.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="563,975" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="563,977" sap2010:WorkflowViewState.IdRef="Sequence_2">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -151,7 +153,7 @@
                             <OutArgument x:TypeArguments="x:Object">[row("Worldwide")]</OutArgument>
                           </ui:GetValue.Value>
                         </ui:GetValue>
-                        <If Condition="[String.IsNullOrEmpty(row(&quot;Distributor&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="521,445" sap2010:WorkflowViewState.IdRef="If_1">
+                        <If Condition="[String.IsNullOrEmpty(row(&quot;Distributor&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="521,447" sap2010:WorkflowViewState.IdRef="If_1">
                           <If.Then>
                             <Sequence sap:VirtualizedContainerService.HintSize="376,298" sap2010:WorkflowViewState.IdRef="Sequence_6">
                               <sap:WorkflowViewStateService.ViewState>
@@ -195,6 +197,7 @@
         </ui:ForEachRow.Body>
       </ui:ForEachRow>
       <ui:CloseTab Browser="[boxofficemojo]" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="731,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="731,93" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Movie info extraction from BoxOfficeMojo completed&quot;]" />
     </Sequence>
   </Sequence>
 </Activity>

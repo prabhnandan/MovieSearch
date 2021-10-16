@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1242,3930" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1859,5268" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -70,7 +70,7 @@
       <AssemblyReference>System.Data.Entity</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1252,3865" sap2010:WorkflowViewState.IdRef="Sequence_6">
+  <Sequence DisplayName="Movie Search" sap:VirtualizedContainerService.HintSize="1252,5203" sap2010:WorkflowViewState.IdRef="Sequence_6">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="Movies_1" />
       <Variable x:TypeArguments="ui:Browser" Name="home" />
@@ -86,7 +86,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="1210,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Month Options" sap:VirtualizedContainerService.HintSize="1210,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[months]</OutArgument>
       </Assign.To>
@@ -94,23 +94,25 @@
         <InArgument x:TypeArguments="x:String">January;February;March;April;May;June;July;August;September;October;November;December</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="1210,291" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Please select the month" OptionsString="[months]" Title="Select Month">
+    <ui:InputDialog Options="{x:Null}" DisplayName="Month selection by user" sap:VirtualizedContainerService.HintSize="1210,296" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Please select the month" OptionsString="[months]" Title="Select Month">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:String">[Month]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1210,721" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[home]" Url="[&quot;https://www.boxofficemojo.com/month/&quot;+Month.ToLower+&quot;/2021/?grossesOption=totalGrosses&quot;]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1210,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Month selected: &quot; + Month]" />
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1210,1121" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[home]" Url="[&quot;https://www.boxofficemojo.com/month/&quot;+Month.ToLower+&quot;/2021/?grossesOption=totalGrosses&quot;]">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="560,620" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Movie name extraction" sap:VirtualizedContainerService.HintSize="560,1019" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,93" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Extracting movie names from BoxOfficeMojo&quot;]" />
             <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="518,528" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -150,26 +152,28 @@
                 </ui:BrowserScope>
               </Sequence>
             </Sequence>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,93" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Movie name extraction completed&quot;]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,93" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[Movies_1.Rows.Count.ToString + &quot; movies found in &quot; + Month]" />
           </Sequence>
         </ActivityAction>
       </ui:OpenBrowser.Body>
     </ui:OpenBrowser>
-    <ui:BuildDataTable DataTable="[columns]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="1210,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Domestic&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;International&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Worldwide&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Producers&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Associate_x0020_Producers&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Executive_x0020_Producers&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Other_x0020_Producers&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Directors&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+    <ui:BuildDataTable DataTable="[columns]" DisplayName="Adding columns to movies datatable" sap:VirtualizedContainerService.HintSize="1210,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Domestic&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;International&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Worldwide&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Producers&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Associate_x0020_Producers&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Executive_x0020_Producers&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Other_x0020_Producers&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Directors&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
     <ui:MergeDataTable Destination="[Movies_1]" DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="1210,22" sap2010:WorkflowViewState.IdRef="MergeDataTable_1" MissingSchemaAction="Add" Source="[columns]" />
-    <Parallel sap:VirtualizedContainerService.HintSize="1210,158" sap2010:WorkflowViewState.IdRef="Parallel_1">
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="IMDb.xaml">
+    <Parallel DisplayName="Parallel execution for IMDB and BoxOfficeMojo" sap:VirtualizedContainerService.HintSize="1210,159" sap2010:WorkflowViewState.IdRef="Parallel_1">
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="IMDb.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="sd:DataTable" x:Key="Movies">[Movies_1]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="BoxOfficeMojo.xaml">
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="BoxOfficeMojo.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="sd:DataTable" x:Key="Movies">[Movies_1]</InArgument>
           <InArgument x:TypeArguments="ui:Browser" x:Key="boxofficemojo">[home]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Parallel>
-    <ui:FilterDataTable DataTable="[Movies_1]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="1210,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_3" OutputDataTable="[Movies_1]" SelectColumnsMode="Remove">
+    <ui:FilterDataTable DataTable="[Movies_1]" DisplayName="Remove &quot;URL&quot; column from movies datatable" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="1210,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_3" OutputDataTable="[Movies_1]" SelectColumnsMode="Remove">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
@@ -181,7 +185,8 @@
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[Movies_1]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1210,300" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1210,93" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Ranking movies by worldwide box office&quot;]" />
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[Movies_1]" DisplayName="Remove &quot;$&quot; for ranking movies" sap:VirtualizedContainerService.HintSize="1210,301" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -205,7 +210,7 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <Assign sap:VirtualizedContainerService.HintSize="1210,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <Assign DisplayName="Crateing new ranked movies datatable" sap:VirtualizedContainerService.HintSize="1210,60" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[Result_Table]</OutArgument>
       </Assign.To>
@@ -213,7 +218,7 @@
         <InArgument x:TypeArguments="sd:DataTable">[(From row In Movies_1.Select Order By Convert.ToInt32(row("Worldwide")) Descending Select row).ToArray.CopyToDatatable()]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:FilterDataTable DataTable="[Result_Table]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="1210,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_4" OutputDataTable="[Result_Table]" SelectColumnsMode="Keep">
+    <ui:FilterDataTable DataTable="[Result_Table]" DisplayName="Selecting required columns" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="1210,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_4" OutputDataTable="[Result_Table]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
@@ -228,7 +233,9 @@
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="1210,483" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" InstanceCachePeriod="3000" WorkbookPath="ExportMovies.xlsx">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1210,93" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Movie ranking completed&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1210,93" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Writing results to Excel sheet&quot;]" />
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Entering results to Excel sheet" sap:VirtualizedContainerService.HintSize="1210,483" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" InstanceCachePeriod="3000" WorkbookPath="ExportMovies.xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
@@ -260,14 +267,16 @@
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
     </ui:ExcelApplicationScope>
-    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1210,1061" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1210,93" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Results successfully entered in Excel sheet: ExportMovies.xlsx&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1210,93" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Appending historical data&quot;]" />
+    <Sequence DisplayName="Appending historical data" sap:VirtualizedContainerService.HintSize="1210,1194" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <Parallel sap:VirtualizedContainerService.HintSize="1168,969" sap2010:WorkflowViewState.IdRef="Parallel_2">
-        <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,923" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="ExportMovies.xlsx">
+        <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Reading results from previous run" sap:VirtualizedContainerService.HintSize="434,923" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="ExportMovies.xlsx">
           <ui:ExcelApplicationScope.Body>
             <ActivityAction x:TypeArguments="ui:WorkbookApplication">
               <ActivityAction.Argument>
@@ -289,13 +298,13 @@
             </ActivityAction>
           </ui:ExcelApplicationScope.Body>
         </ui:ExcelApplicationScope>
-        <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="560,923" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="Historical.xlsx">
+        <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Appending previous results to historical data Excel sheet" sap:VirtualizedContainerService.HintSize="560,923" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="Historical.xlsx">
           <ui:ExcelApplicationScope.Body>
             <ActivityAction x:TypeArguments="ui:WorkbookApplication">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="526,768" sap2010:WorkflowViewState.IdRef="Sequence_11">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="526,770" sap2010:WorkflowViewState.IdRef="Sequence_11">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="sd:DataTable" Name="historical" />
                 </Sequence.Variables>
@@ -313,7 +322,7 @@
                 </ui:ExcelReadRange>
                 <ui:ExcelAppendRange DataTable="[DataTable]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_7" SheetName="HistoricalData" />
                 <ui:ExcelAppendRange DataTable="[RankedTable]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_8" SheetName="HistoricalRanked" />
-                <If Condition="[historical.Rows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="484,323" sap2010:WorkflowViewState.IdRef="If_1">
+                <If Condition="[historical.Rows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="484,325" sap2010:WorkflowViewState.IdRef="If_1">
                   <If.Then>
                     <Sequence sap:VirtualizedContainerService.HintSize="242,176" sap2010:WorkflowViewState.IdRef="Sequence_13">
                       <sap:WorkflowViewStateService.ViewState>
@@ -331,6 +340,7 @@
           </ui:ExcelApplicationScope.Body>
         </ui:ExcelApplicationScope>
       </Parallel>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1168,93" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Historical data sucessfully appended to Excel sheet: Historical.xlsx&quot;]" />
     </Sequence>
   </Sequence>
 </Activity>

@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1262,3503</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1859,3528</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Sequence_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -88,7 +88,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="995,3438" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="955,3463" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:Browser" Name="imdb" />
     </Sequence.Variables>
@@ -97,13 +97,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" sap2010:Annotation.AnnotationText="" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="953,3346" sap2010:WorkflowViewState.IdRef="OpenBrowser_4" UiBrowser="[imdb]" Url="https://www.imdb.com/">
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" sap2010:Annotation.AnnotationText="" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="913,3371" sap2010:WorkflowViewState.IdRef="OpenBrowser_4" UiBrowser="[imdb]" Url="https://www.imdb.com/">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence sap:VirtualizedContainerService.HintSize="919,3214" sap2010:WorkflowViewState.IdRef="Sequence_66">
+          <Sequence sap:VirtualizedContainerService.HintSize="879,3238" sap2010:WorkflowViewState.IdRef="Sequence_66">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="producers" />
               <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="directors" />
@@ -114,31 +114,32 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="877,3122" sap2010:WorkflowViewState.IdRef="Sequence_57">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="837,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Extracting producer/director info from IMDB&quot;]" />
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="837,2880" sap2010:WorkflowViewState.IdRef="Sequence_57">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[Movies]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="835,2968" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[Movies]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="795,2726" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="785,2821" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="745,2578" sap2010:WorkflowViewState.IdRef="Sequence_56">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="743,2729" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                      <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="703,2486" sap2010:WorkflowViewState.IdRef="Sequence_55">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[imdb]" BrowserType="Chrome" DisplayName="Attach Browser 'IMDbRatin Page'" sap:VirtualizedContainerService.HintSize="701,670" sap2010:WorkflowViewState.IdRef="BrowserScope_10" InformativeScreenshot="97e0432320bf94e876eb4cbab61adfc2">
+                        <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[imdb]" BrowserType="Chrome" DisplayName="Attach Browser 'IMDbRatin Page'" sap:VirtualizedContainerService.HintSize="661,670" sap2010:WorkflowViewState.IdRef="BrowserScope_10" InformativeScreenshot="97e0432320bf94e876eb4cbab61adfc2">
                           <ui:BrowserScope.Body>
                             <ActivityAction x:TypeArguments="x:Object">
                               <ActivityAction.Argument>
@@ -179,7 +180,7 @@
                             </ActivityAction>
                           </ui:BrowserScope.Body>
                         </ui:BrowserScope>
-                        <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="701,582" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                        <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="661,582" sap2010:WorkflowViewState.IdRef="Sequence_52">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -220,19 +221,19 @@
                             </ui:BrowserScope.Body>
                           </ui:BrowserScope>
                         </Sequence>
-                        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[directors]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="701,446" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[directors]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="661,449" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                           <ui:ForEachRow.Body>
                             <ActivityAction x:TypeArguments="sd:DataRow">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="director" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="611,299" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="611,301" sap2010:WorkflowViewState.IdRef="Sequence_53">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <If Condition="[director(0).Equals(directors(0)(0))]" sap:VirtualizedContainerService.HintSize="569,207" sap2010:WorkflowViewState.IdRef="If_1">
+                                <If Condition="[director(0).Equals(directors(0)(0))]" sap:VirtualizedContainerService.HintSize="569,209" sap2010:WorkflowViewState.IdRef="If_1">
                                   <If.Then>
                                     <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
                                       <Assign.To>
@@ -258,19 +259,19 @@
                             </ActivityAction>
                           </ui:ForEachRow.Body>
                         </ui:ForEachRow>
-                        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[producers]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="701,695" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+                        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[producers]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="661,449" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
                           <ui:ForEachRow.Body>
                             <ActivityAction x:TypeArguments="sd:DataRow">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="producer" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="651,548" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="539,301" sap2010:WorkflowViewState.IdRef="Sequence_54">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[Split(producer(2).ToString, &quot; &quot;)(0)]" sap:VirtualizedContainerService.HintSize="609,456" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                                <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[Split(producer(2).ToString, &quot; &quot;)(0)]" sap:VirtualizedContainerService.HintSize="497,209" sap2010:WorkflowViewState.IdRef="Switch`1_1">
                                   <Switch.Default>
                                     <If Condition="[String.IsNullOrEmpty(row(&quot;Other Producers&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="569,207" sap2010:WorkflowViewState.IdRef="If_5">
                                       <sap:WorkflowViewStateService.ViewState>
@@ -301,7 +302,7 @@
                                       </If.Else>
                                     </If>
                                   </Switch.Default>
-                                  <If x:Key="executive" Condition="[String.IsNullOrEmpty(row(&quot;Executive Producers&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="569,207" sap2010:WorkflowViewState.IdRef="If_2">
+                                  <If x:Key="executive" Condition="[String.IsNullOrEmpty(row(&quot;Executive Producers&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="569,209" sap2010:WorkflowViewState.IdRef="If_2">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -329,7 +330,7 @@
                                       </Assign>
                                     </If.Else>
                                   </If>
-                                  <If x:Key="associate" Condition="[String.IsNullOrEmpty(row(&quot;Associate Producers&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="569,207" sap2010:WorkflowViewState.IdRef="If_3">
+                                  <If x:Key="associate" Condition="[String.IsNullOrEmpty(row(&quot;Associate Producers&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="569,209" sap2010:WorkflowViewState.IdRef="If_3">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -357,7 +358,7 @@
                                       </Assign>
                                     </If.Else>
                                   </If>
-                                  <If x:Key="producer" Condition="[String.IsNullOrEmpty(row(&quot;Producers&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="569,207" sap2010:WorkflowViewState.IdRef="If_4">
+                                  <If x:Key="producer" Condition="[String.IsNullOrEmpty(row(&quot;Producers&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="569,209" sap2010:WorkflowViewState.IdRef="If_4">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -385,7 +386,7 @@
                                       </Assign>
                                     </If.Else>
                                   </If>
-                                  <If x:Key="" Condition="[String.IsNullOrEmpty(row(&quot;Producers&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="569,207" sap2010:WorkflowViewState.IdRef="If_6">
+                                  <If x:Key="" Condition="[String.IsNullOrEmpty(row(&quot;Producers&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="569,209" sap2010:WorkflowViewState.IdRef="If_6">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -418,15 +419,16 @@
                             </ActivityAction>
                           </ui:ForEachRow.Body>
                         </ui:ForEachRow>
-                        <ui:ClearDataTable DataTable="[directors]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="701,22" sap2010:WorkflowViewState.IdRef="ClearDataTable_1" />
-                        <ui:ClearDataTable DataTable="[producers]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="701,22" sap2010:WorkflowViewState.IdRef="ClearDataTable_2" />
+                        <ui:ClearDataTable DataTable="[directors]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="661,22" sap2010:WorkflowViewState.IdRef="ClearDataTable_1" />
+                        <ui:ClearDataTable DataTable="[producers]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="661,22" sap2010:WorkflowViewState.IdRef="ClearDataTable_2" />
                       </Sequence>
                     </Sequence>
                   </ActivityAction>
                 </ui:ForEachRow.Body>
               </ui:ForEachRow>
-              <ui:CloseTab Browser="[imdb]" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="835,22" sap2010:WorkflowViewState.IdRef="CloseTab_10" />
+              <ui:CloseTab Browser="[imdb]" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="795,22" sap2010:WorkflowViewState.IdRef="CloseTab_10" />
             </Sequence>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="837,93" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Producer/director info extraction from IMDBcompleted&quot;]" />
           </Sequence>
         </ActivityAction>
       </ui:OpenBrowser.Body>
