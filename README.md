@@ -1,6 +1,6 @@
 # Prior Requirements
 - Hardware: Access via computer (Microsoft Windows)
-- Software: UiPath Web Automation Extension, UiPath Software License, Microsoft Excel Spreadsheet Software, Chrome Extension, Microsoft Windows
+- Software: UiPath Web Automation Extension, UiPath Software License, Microsoft Excel Spreadsheet Software, Google Chrome, Chrome Extension, Microsoft Windows
 - Website: Access via URL
   - IMDb: https://www.imdb.com/
   - Box Office Mojo: https://www.boxofficemojo.com/
@@ -16,11 +16,10 @@
   2. Open UiPath Studio and click 'Open a Local Project'
   3. Select 'project.json' file
   4. Click 'Project' under the project tab on the main page
-  5. Select the 'Main.xaml' file and run the software
+  5. Select the 'MovieSearch.xaml' file and run the software
   6. As it executes, it will prompt the user to select the desired month
       - Displays 'Please select the month' with list of months in a drop-down menu
   7. Select the preferred month and select ‘Ok’
-      - It will takes some time running the bot (approximately 5 minutes)
   8. Type the year you want to consider, it will default to the current year
       - Select 'Ok' when the message box contains the right year
   10. While executing, the bot will direct to the Box Office Mojo website and IMDb website performing parallel activity
@@ -28,8 +27,6 @@
 
 
 # Limitations
-- The bot might not execute if two websites', boxofficemojo and IMDb, servers are down. If this is the case, try running the bot again after a few minutes.
+- The bot might not execute if any of the two websites', boxofficemojo and IMDb, servers are down. If this is the case, try running the bot again after a few minutes.
 - URL dependant, if they remain consistent then the automation will be able to run without any errors, however if Boxofficemojo or IMDb were to change then the bot may not be able to register the changes.
-- Comes under exceptional handling:	
-    - There are some cases the bot will pick up on multiple movies directed by one director that were released in the same month. - consequently we decided to include them all but order them by their ranking order (Highest gross first).
-    - The movies which have the same title can confuse the bot as it will include the same details of the production team and distributor - Users may need to manually search for the movie titles that do release in the same month with the same title, and manipulate the data to have the correct corresponding details across the films.
+- The bot always selects the first movie in the search performed on IMDb website. If there are multiple movies with the same name, the incorrect movie might get selected - Users may need to manually manipulate the data to have the correct corresponding details across the films. (The client has agreed to ignore this limitation)
