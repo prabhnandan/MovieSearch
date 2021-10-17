@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1538,1043</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1538,2381</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>imdb_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -71,29 +71,28 @@
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="imdb" sap:VirtualizedContainerService.HintSize="568,978" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="imdb" sap:VirtualizedContainerService.HintSize="816,2316" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="526,886" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence sap:VirtualizedContainerService.HintSize="774,2224" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Extracting movie info from BoxOfficeMojo&quot;]" />
-      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[Movies]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="484,470" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="732,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Extracting movie info from BoxOfficeMojo&quot;]" />
+      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[Movies]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="732,1808" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
             </ActivityAction.Argument>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,322" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="682,1660" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <TryCatch.Try>
                 <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="644,1433" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
@@ -169,7 +168,7 @@
                                   </sap:WorkflowViewStateService.ViewState>
                                   <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_3">
                                     <ui:GetValue.Target>
-                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f9f32729-a82c-482a-9733-fc1ce370acef" InformativeScreenshot="5819090bf4f0ff156b87dee1d4526b52" Selector="&lt;html app='chrome.exe' title='* - Box Office Mojo' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' parentid='a-page' tag='SPAN' idx='2' /&gt;">
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f9f32729-a82c-482a-9733-fc1ce370acef" InformativeScreenshot="e23299427fb2198337a0acdf5595de02" Selector="&lt;html app='chrome.exe' title='* - Box Office Mojo' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' parentid='a-page' tag='SPAN' idx='2' /&gt;">
                                         <ui:Target.TimeoutMS>
                                           <InArgument x:TypeArguments="x:Int32" />
                                         </ui:Target.TimeoutMS>
@@ -201,10 +200,10 @@
                 </Sequence>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,160" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="648,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -220,8 +219,8 @@
           </ActivityAction>
         </ui:ForEachRow.Body>
       </ui:ForEachRow>
-      <ui:CloseTab Browser="[boxofficemojo]" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Movie info extraction from BoxOfficeMojo completed&quot;]" />
+      <ui:CloseTab Browser="[boxofficemojo]" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="732,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="732,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Movie info extraction from BoxOfficeMojo completed&quot;]" />
     </Sequence>
   </Sequence>
 </Activity>
