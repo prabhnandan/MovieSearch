@@ -30,3 +30,8 @@
 - The bot might not execute if any of the two websites', boxofficemojo and IMDb, servers are down. If this is the case, try running the bot again after a few minutes.
 - URL dependant, if they remain consistent then the automation will be able to run without any errors, however if Boxofficemojo or IMDb were to change then the bot may not be able to register the changes.
 - The bot always selects the first movie in the search performed on IMDb website. If there are multiple movies with the same name, the incorrect movie might get selected - Users may need to manually manipulate the data to have the correct corresponding details across the films. (The client has agreed to ignore this limitation)
+
+# Logging
+- The solution automatically logs certain steps while its running to show the progress and if any errors occur. This can be viewed within the UiPath 'Output' terminal at the bottom of the screeb, but it is also written to the default UiPath logging location, and can be viewed and analysed later if needed.
+- The default logging location will depend on your operating system username, but on a Windows machine it should be located at `C:\Users\{Your Username}\AppData\Local\UiPath\Logs`.  
+- The file should be called `{Date of run}_Execution.log` and all log messages that were in the UiPath 'Output' terminal will be saved here automatically.
