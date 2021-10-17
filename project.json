@@ -1,7 +1,7 @@
 {
   "name": "MovieSearch",
   "description": "Blank Process",
-  "main": "Main.xaml",
+  "main": "MovieSearch.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.9.5]",
     "UiPath.Mail.Activities": "[1.9.5]",
@@ -44,8 +44,8 @@
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "Main.xaml",
-      "uniqueId": "d2c63e89-a312-48e1-9812-260774e83daa",
+      "filePath": "MovieSearch.xaml",
+      "uniqueId": "46ba1e2d-b2de-464d-9fbc-5767010eab1a",
       "input": [],
       "output": []
     }

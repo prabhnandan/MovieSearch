@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1538,2381</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1538,1043</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>imdb_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -73,26 +73,26 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="imdb" sap:VirtualizedContainerService.HintSize="816,2316" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="BoxOfficeMojo" sap:VirtualizedContainerService.HintSize="568,978" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="774,2224" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence sap:VirtualizedContainerService.HintSize="526,886" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="732,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Extracting movie info from BoxOfficeMojo&quot;]" />
-      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[Movies]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="732,1808" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Extracting movie info from BoxOfficeMojo&quot;]" />
+      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[Movies]" DisplayName="For every Movie" sap:VirtualizedContainerService.HintSize="484,470" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
             </ActivityAction.Argument>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="682,1660" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,322" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <TryCatch.Try>
                 <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="644,1433" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
@@ -100,14 +100,14 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:NavigateTo Browser="[boxofficemojo]" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="602,59" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[&quot;https://www.boxofficemojo.com&quot; + row(&quot;URL&quot;).ToString]" />
+                  <ui:NavigateTo Browser="[boxofficemojo]" DisplayName="Navigate To Movie's domestic gross page" sap:VirtualizedContainerService.HintSize="602,59" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[&quot;https://www.boxofficemojo.com&quot; + row(&quot;URL&quot;).ToString]" />
                   <Sequence DisplayName="Screen Scraping" sap:VirtualizedContainerService.HintSize="602,1242" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[boxofficemojo]" BrowserType="Chrome" DisplayName="Attach Browser 'FreeGuy B Page'" sap:VirtualizedContainerService.HintSize="560,1150" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="b41c2e9ae4eff8d130295596e88806a8">
+                    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[boxofficemojo]" BrowserType="Chrome" DisplayName="Attach Browser 'Domestic Gross page'" sap:VirtualizedContainerService.HintSize="560,1150" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="b41c2e9ae4eff8d130295596e88806a8">
                       <ui:BrowserScope.Body>
                         <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>
@@ -119,7 +119,7 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:GetFullText DisplayName="Get Full Text 'SPAN'" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetFullText_1" IgnoreHidden="False">
+                            <ui:GetFullText DisplayName="Get Domestic gross" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetFullText_1" IgnoreHidden="False">
                               <ui:GetFullText.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="727216f9-580c-4b69-bd30-18e312c0cf72" InformativeScreenshot="3146ec3a4b069bd6c06bed89ae0428ea" Selector="&lt;html app='chrome.exe' title='* - Box Office Mojo' /&gt;&lt;webctrl parentid='a-page' tag='SPAN' parentclass='a-size-medium a-text-bold' /&gt;" WaitForReady="COMPLETE">
                                   <ui:Target.TimeoutMS>
@@ -131,7 +131,7 @@
                                 <OutArgument x:TypeArguments="x:Object">[row("Domestic")]</OutArgument>
                               </ui:GetFullText.Text>
                             </ui:GetFullText>
-                            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get International gross" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
                               <ui:GetValue.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="763ddf2c-4a38-4494-ac93-be9186b7f880" InformativeScreenshot="5bbe3be9dc5f72bb3a99fccf19bbba7d" Selector="&lt;html app='chrome.exe' title='* - Box Office Mojo' /&gt;&lt;webctrl parentid='a-page' tag='A' class='a-link-normal' parentclass='a-size-medium a-text-bold' /&gt;" TimeoutMS="2000">
                                   <ui:Target.WaitForReady>
@@ -143,7 +143,7 @@
                                 <OutArgument x:TypeArguments="x:Object">[row("International")]</OutArgument>
                               </ui:GetValue.Value>
                             </ui:GetValue>
-                            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_2">
+                            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Worldwide gross" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_2">
                               <ui:GetValue.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f9f32729-a82c-482a-9733-fc1ce370acef" InformativeScreenshot="df24db40c439bc213995aca2bb55b24d" Selector="&lt;html app='chrome.exe' title='* - Box Office Mojo' /&gt;&lt;webctrl aaname='Worldwide' css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;a' parentid='a-page' tag='A' /&gt;&lt;nav up='2' /&gt;&lt;webctrl parentid='a-page' tag='A' class='a-link-normal' parentclass='a-size-medium a-text-bold' /&gt;">
                                   <ui:Target.TimeoutMS>
@@ -158,7 +158,7 @@
                                 <OutArgument x:TypeArguments="x:Object">[row("Worldwide")]</OutArgument>
                               </ui:GetValue.Value>
                             </ui:GetValue>
-                            <If Condition="[String.IsNullOrEmpty(row(&quot;Distributor&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="484,474" sap2010:WorkflowViewState.IdRef="If_1">
+                            <If Condition="[String.IsNullOrEmpty(row(&quot;Distributor&quot;).ToString)]" DisplayName="If Distribution info was not available before" sap:VirtualizedContainerService.HintSize="484,474" sap2010:WorkflowViewState.IdRef="If_1">
                               <If.Then>
                                 <Sequence sap:VirtualizedContainerService.HintSize="376,298" sap2010:WorkflowViewState.IdRef="Sequence_6">
                                   <sap:WorkflowViewStateService.ViewState>
@@ -200,10 +200,10 @@
                 </Sequence>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="648,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,160" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -219,8 +219,8 @@
           </ActivityAction>
         </ui:ForEachRow.Body>
       </ui:ForEachRow>
-      <ui:CloseTab Browser="[boxofficemojo]" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="732,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="732,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Movie info extraction from BoxOfficeMojo completed&quot;]" />
+      <ui:CloseTab Browser="[boxofficemojo]" DisplayName="Close BoxOfficeMojo tab" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Movie info extraction from BoxOfficeMojo completed&quot;]" />
     </Sequence>
   </Sequence>
 </Activity>
